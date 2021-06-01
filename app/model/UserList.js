@@ -8,22 +8,4 @@ Ext.define('DemoApp.model.UserList', {
         { name: 'points_spent', type: 'integer' },
         { name: 'registration_date', type: 'string' },
     ],
-
-    proxy: {
-        type: 'ajax',
-        url: 'https://safe-bayou-13742.herokuapp.com/api/users-all',
-        actionMethods: {
-            read: 'GET',
-        },
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        paramsAsJson: true,
-
-        reader: {
-            type: 'json',
-            rootProperty: 'items',
-            totalProperty: 'total',
-        },
-    },
 });
