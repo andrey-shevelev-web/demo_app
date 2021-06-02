@@ -9,7 +9,7 @@ Ext.define('DemoApp.store.UserList', {
         type: 'ajax',
         url: 'https://safe-bayou-13742.herokuapp.com/api/users',
         actionMethods: {
-            read: 'GET',
+            read: 'POST',
         },
         headers: {
             'Content-Type': 'application/json',
@@ -20,6 +20,12 @@ Ext.define('DemoApp.store.UserList', {
             type: 'json',
             rootProperty: 'items',
             totalProperty: 'total',
+        },
+    },
+
+    listeners: {
+        load(store) {
+            this.fireEvent('userListStoreLoadEvent', store.getTotalCount());
         },
     },
 });

@@ -3,33 +3,51 @@ Ext.define('DemoApp.view.main.UserListController', {
 
     alias: 'controller.userlist',
 
+    listen: {
+        store: {
+            userlist: {
+                userListStoreLoadEvent: 'userListStoreLoad',
+            },
+        },
+    },
+
     privates: {
         doLoadStore() {
             const store = Ext.getStore('sid_userlist');
             const start = 0;
             const limit = 10;
-            const params = { start, limit };
-
-            console.log('params', params);
+            const page = 1;
+            store.pageSize = 10;
 
             store.load({
-                params,
+                params: {
+                    start,
+                    limit,
+                    page,
+                },
             });
         },
     },
 
     afterRender() {
-        console.log('afterRender');
         this.doLoadStore();
     },
 
-    // onItemSelected: function (sender, record) {
-    //     Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    // },
+    onReload() {
+        this.doLoadStore();
+    },
 
-    // onConfirm: function (choice) {
-    //     if (choice === 'yes') {
-    //         //
-    //     }
-    // }
+    userListStoreLoad(total) {
+        this.getViewModel().set('vmdTotalCount', total);
+    },
+
+    onSelectionChange(model, selected) {
+        const sumPointsSpent = selected.reduce(
+            (acc, item) => acc + item.data.points_spent,
+            0
+        );
+
+        this.getViewModel().set('vmdSelectedCount', selected.length);
+        this.getViewModel().set('vmdSelectedSum', sumPointsSpent);
+    },
 });
