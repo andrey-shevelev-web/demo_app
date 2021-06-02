@@ -45,22 +45,6 @@ Ext.define('DemoApp.view.main.UserList', {
         // afterPageText: 'frororoo {0}',
     },
 
-    // tbar: {
-    //     items: [
-    //         {
-    //             xtype: 'pagingbar',
-    //             displayInfo: true,
-    //         },
-    //         // {
-    //         //     html: '<p>Separator</p>',
-    //         // },
-    //         // {
-    //         //     xtype: 'pagingtoolbar',
-    //         //     displayInfo: true,
-    //         // },
-    //     ],
-    // },
-
     columns: [
         { text: 'Имя', dataIndex: 'name', flex: 2 },
         { text: 'Баллов: заработано', dataIndex: 'points_earned', flex: 1 },

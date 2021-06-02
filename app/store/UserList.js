@@ -5,6 +5,8 @@ Ext.define('DemoApp.store.UserList', {
     alias: 'store.userlist',
     storeId: 'sid_userlist',
 
+    pageSize: 10,
+
     proxy: {
         type: 'ajax',
         url: 'https://safe-bayou-13742.herokuapp.com/api/users',

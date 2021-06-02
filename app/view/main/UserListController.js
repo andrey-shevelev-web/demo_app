@@ -15,9 +15,8 @@ Ext.define('DemoApp.view.main.UserListController', {
         doLoadStore() {
             const store = Ext.getStore('sid_userlist');
             const start = 0;
-            const limit = 10;
+            const limit = store.pageSize;
             const page = 1;
-            store.pageSize = 10;
 
             store.load({
                 params: {
