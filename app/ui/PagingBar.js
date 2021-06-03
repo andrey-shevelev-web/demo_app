@@ -1,8 +1,12 @@
-Ext.define('DemoApp.view.pagingbar.PagingBar', {
+Ext.define('DemoApp.ui.PagingBar', {
     extend: 'Ext.toolbar.Paging',
     xtype: 'pagingbar',
 
     requires: ['Ext.toolbar.Paging'],
+
+    config: {
+        visiblePages: 10,
+    },
 
     initComponent() {
         let me = this;
@@ -43,10 +47,52 @@ Ext.define('DemoApp.view.pagingbar.PagingBar', {
         ];
 
         me.callParent(arguments);
+
         for (let i = 0; i < 3; i++) {
             let compDel = me.getComponent(3);
-            console.log(compDel);
             me.remove(compDel);
+        }
+
+        me.insert(3, { xtype: 'container' });
+    },
+
+    getButtonNumbers(startValue, length) {
+        return [...Array(length).keys()].map(item => startValue + item);
+    },
+
+    drawButtons(store, parent, buttonNumbers) {
+        Ext.suspendLayouts();
+        parent.removeAll();
+
+        let buttons = buttonNumbers.map(item => {
+            return {
+                xtype: 'button',
+                text: `${item}`,
+                handler: function () {
+                    store.loadPage(item);
+                },
+            };
+        });
+
+        parent.add(buttons);
+        Ext.resumeLayouts(true);
+    },
+
+    createButtons() {
+        let me = this,
+            store = me.store,
+            buttonsParent = me.down('container'),
+            pagesTotal = Math.ceil(store.getTotalCount() / store.pageSize),
+            buttonNumbers = [];
+
+        buttonNumbers = me.getButtonNumbers(1, pagesTotal);
+        me.drawButtons(store, buttonsParent, buttonNumbers);
+    },
+
+    onLoad: function () {
+        if (this.rendered) {
+            this.createButtons();
+            this.callParent(arguments);
         }
     },
 });

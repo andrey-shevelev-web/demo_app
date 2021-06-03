@@ -32,10 +32,6 @@ Ext.define('DemoApp.view.main.UserListController', {
         this.doLoadStore();
     },
 
-    onReload() {
-        this.doLoadStore();
-    },
-
     userListStoreLoad(total) {
         this.getViewModel().set('vmdTotalCount', total);
     },
