@@ -16,6 +16,6 @@ Ext.define('DemoApp.ui.clock.Clock', {
         html: '{vmdDateTime}',
     },
 
-    width: 300,
-    height: 40,
+    width: 200,
+    height: 60,
 });
