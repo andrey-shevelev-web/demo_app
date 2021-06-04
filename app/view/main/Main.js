@@ -76,21 +76,21 @@ Ext.define('DemoApp.view.main.Main', {
 
     items: [
         {
+            title: 'Table Users',
+            iconCls: 'fa-user',
+            items: [
+                {
+                    xtype: 'mainuserlist',
+                },
+            ],
+        },
+        {
             title: 'Home',
             iconCls: 'fa-home',
             // The following grid shares a store with the classic version's grid as well!
             items: [
                 {
                     xtype: 'mainlist',
-                },
-            ],
-        },
-        {
-            title: 'Users',
-            iconCls: 'fa-user',
-            items: [
-                {
-                    xtype: 'mainuserlist',
                 },
             ],
         },

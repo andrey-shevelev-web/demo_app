@@ -81,11 +81,16 @@ Ext.define('DemoApp.ui.PagingBar', {
     createButtons() {
         let me = this,
             store = me.store,
+            currentPage = me.store.currentPage,
             buttonsParent = me.down('container'),
+            maxButtons = me.visiblePages,
             pagesTotal = Math.ceil(store.getTotalCount() / store.pageSize),
+            firstButton = currentPage,
+            countButtons = 0,
             buttonNumbers = [];
 
-        buttonNumbers = me.getButtonNumbers(1, pagesTotal);
+        countButtons = Math.min(pagesTotal + 1 - firstButton, maxButtons);
+        buttonNumbers = me.getButtonNumbers(firstButton, countButtons);
         me.drawButtons(store, buttonsParent, buttonNumbers);
     },
 

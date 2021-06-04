@@ -4,6 +4,7 @@ Ext.define('DemoApp.view.main.UserList', {
 
     requires: [
         'DemoApp.ui.PagingBar',
+        'DemoApp.ui.clock.Clock',
         'DemoApp.store.UserList',
         'DemoApp.view.main.UserListModel',
         'DemoApp.view.main.UserListController',
@@ -18,6 +19,14 @@ Ext.define('DemoApp.view.main.UserList', {
     },
 
     viewModel: 'userlist',
+
+    tbar: {
+        items: [
+            {
+                xtype: 'clock',
+            },
+        ],
+    },
 
     columns: [
         { text: 'Имя', dataIndex: 'name', flex: 2 },
@@ -34,7 +43,6 @@ Ext.define('DemoApp.view.main.UserList', {
             },
             {
                 xtype: 'label',
-                height: 50,
                 bind: {
                     text:
                         'Кол-во документов: {vmdTotalCount} Выделено документов: {vmdSelectedCount} Сумма выделенных документов: {vmdSelectedSum}',

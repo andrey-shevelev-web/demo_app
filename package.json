@@ -5,6 +5,7 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
+        "serve": "sencha app watch -port 3000",
         "build": "sencha app build production",
         "copy": "cp -r ./build/production/DemoApp/. ./dist",
         "build-dist": "npm run build && npm run copy",
