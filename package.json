@@ -5,8 +5,11 @@
     "main": "app.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "predeploy": "sencha app build production",
-        "deploy": "gh-pages -d build"
+        "build": "sencha app build production",
+        "copy": "cp -r ./build/production/DemoApp/. ./dist",
+        "build-dist": "npm run build && npm run copy",
+        "predeploy": "npm run build && npm run copy",
+        "deploy": "gh-pages -d dist"
     },
     "repository": {
         "type": "git",
