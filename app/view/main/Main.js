@@ -37,7 +37,7 @@ Ext.define('DemoApp.view.main.Main', {
             },
             flex: 0,
         },
-        iconCls: 'fa fa-th-list',
+        iconCls: 'x-fa fa-th-list',
     },
 
     tabBar: {
@@ -77,7 +77,7 @@ Ext.define('DemoApp.view.main.Main', {
     items: [
         {
             title: 'Table Users',
-            iconCls: 'fa fa-user',
+            iconCls: 'x-fa fa-user',
             items: [
                 {
                     xtype: 'mainuserlist',
@@ -86,27 +86,13 @@ Ext.define('DemoApp.view.main.Main', {
         },
         {
             title: 'Home',
-            iconCls: 'fa fa-home',
+            iconCls: 'x-fa fa-home',
             // The following grid shares a store with the classic version's grid as well!
             items: [
                 {
                     xtype: 'mainlist',
                 },
             ],
-        },
-        {
-            title: 'Groups',
-            iconCls: 'fa-users',
-            bind: {
-                html: '{loremIpsum}',
-            },
-        },
-        {
-            title: 'Settings',
-            iconCls: 'fa fa-cog',
-            bind: {
-                html: '{loremIpsum}',
-            },
         },
     ],
 });
