@@ -1,7 +1,16 @@
-// @include extjs-panel-ui(
-//     $ui: 'clock',
-//     $ui-body-background-color: #2a43ae,
-//     $ui-body-color: #fff,
-//     $ui-body-font-size: 16px,
-//     $ui-body-font-weight: bold
-// );
+.clock-container {
+    background-color: #2a43ae;
+    padding: 18px;
+}
+
+.clock-item {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+
+    &&::before {
+        content: '\f017';
+        font-family: 'Font Awesome 5 Free';
+        margin-right: 8px;
+    }
+}

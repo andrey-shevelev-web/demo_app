@@ -13,7 +13,7 @@ Ext.define('DemoApp.ui.clock.Clock', {
     },
 
     bind: {
-        html: '{vmdDateTime}',
+        html: '{styledDateTime}',
     },
 
     width: 200,
