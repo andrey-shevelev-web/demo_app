@@ -4,7 +4,6 @@
     "description": "This folder is primarily a container for the top-level pieces of the application. While you can remove some files and folders that this application does not use, be sure to read below before deciding what can be deleted and what needs to be kept in source control.",
     "main": "app.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
         "serve": "sencha app watch -port 3000",
         "build": "sencha app build production",
         "copy": "cp -r ./build/production/DemoApp/. ./dist",
@@ -24,6 +23,6 @@
         "url": "https://github.com/andrey-shevelev-web/demo_app/issues"
     },
     "devDependencies": {
-        "gh-pages": "^3.2.0"
+        "gh-pages": "^1.1.0"
     }
 }

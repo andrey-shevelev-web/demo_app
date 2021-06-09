@@ -4,4 +4,5 @@
 bootstrap.*
 classic.json*
 modern.json*
+package-lock.json
 .sencha
