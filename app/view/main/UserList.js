@@ -44,8 +44,7 @@ Ext.define('DemoApp.view.main.UserList', {
             {
                 xtype: 'label',
                 bind: {
-                    text:
-                        'Кол-во документов: {vmdTotalCount} Выделено документов: {vmdSelectedCount} Сумма выделенных документов: {vmdSelectedSum}',
+                    text: 'Кол-во документов: {vmdTotalCount} Выделено документов: {vmdSelectedCount} Сумма выделенных документов: {vmdSelectedSum}',
                 },
             },
         ],

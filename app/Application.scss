@@ -7,3 +7,23 @@ $enable-font-awesome: dynamic(true);
 $base-color: #3f51b5;
 $base-dark-color: #303f9f;
 $base-light-color: #e8eaf6;
+
+.x-body {
+    scrollbar-width: thin;
+    scrollbar-color: #d3d4dd #fff;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d3d4dd;
+    border-radius: 10px;
+    border: 3px solid #fff;
+}

@@ -85,7 +85,7 @@ Ext.define('DemoApp.view.main.Main', {
             ],
         },
         {
-            title: 'Home',
+            title: 'Scrollbar',
             iconCls: 'x-fa fa-home',
             // The following grid shares a store with the classic version's grid as well!
             items: [
